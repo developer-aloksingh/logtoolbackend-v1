@@ -1,0 +1,7 @@
+<134>1 2025-12-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=alok 103.01.01 TCP-miss/200 1257 Get www.google.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-13-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=akash 103.01.01 TCP-miss/300 1257 Get www.insta.com/yt/user - DIRECT/128.0.0.1
+<134>1 2025-14-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=aman 103.01.01 TCP-miss/304 1257 Post www.fb.com/yt/user - DIRECT/129.0.0.1
+<134>1 2025-15-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=alok 103.01.01 TCP-miss/200 1257 Get www.meet.com/yt/user - DIRECT/126.0.0.1
+<134>1 2025-16-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=ajay 103.01.01 TCP-miss/500 1257 Post www.alok.com/yt/user - DIRECT/127.0.0.1
+
+<134>1 2025-16-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=ajay 103.01.01 TCP-miss/500 1257 Post www.alok.com/yt/user - DIRECT/127.0.0.1 alok alok alok

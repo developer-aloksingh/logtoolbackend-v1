@@ -33,64 +33,77 @@ const uploadAndPars = (req, res) => {
       const logData = fs.readFileSync(filePath, "utf8");
       const logLines = logData.split("\n").filter((line) => line.trim() !== "");
 
-      // Array to store parsed log entries
+
+      
+
+
+
+
+
       const parsedLogs = [];
 
-      // Updated regex to match the log format
-      const logRegex = /^<(\d+)>\d+\s+(\S+)\s+(\S+)\s+(\S+)\s+(-)\s+(-)\s+(-)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(.+)$/;
+for (const line of logLines) {
+  // Split the line by whitespace
+  const parts = line.trim().split(/\s+/);
 
-      for (const line of logLines) {
-        const match = line.match(logRegex);
-        if (match) {
-          const [
-            ,
-            logLevel,
-            timestamp,
-            logType,
-            clientIp,
-            dash1,
-            dash2,
-            dash3,
-            elapsedTime,
-            bytes,
-            userField,
-            ip,
-            methodStatus,
-            method,
-            urlAndExtra
-          ] = match;
+  // Ensure there are enough parts to parse (at least 15 fields based on the log format)
+  if (parts.length >= 15) {
+    // Extract fields based on their positions
+    const logLevel = parts[0].match(/^<(\d+)>/)?.[1] || null; // Extract number from <134>
+    const timestamp = parts[1];
+    const host = parts[2];
+    const logType = parts[3];
+    const dash1 = parts[4];
+    const dash2 = parts[5];
+    const dash3 = parts[6];
+    const elapsedTime = parts[7];
+    const bytes = parts[8];
+    const userField = parts[9];
+    const clientIp = parts[10];
+    const methodStatus = parts[11];
+    const port = parts[12]; // Assuming 1257 is bytes transferred
+    const method = parts[13]; // Assuming Get is the HTTP method
+    const url = parts[14];
+    const hierarchy = parts[15];
+    const peer = parts[16];
 
-          // Parse user from userField (e.g., "user=asingh")
-          const userMatch = userField.match(/user=(\S+)/);
-          const user = userMatch ? userMatch[1] : null;
+    // Parse user from userField (e.g., "user=aman")
+    const userMatch = userField.match(/user=(\S+)/);
+    const user = userMatch ? userMatch[1] : null;
 
-          // Split urlAndExtra into url, hierarchy, and peer
-          const extraParts = urlAndExtra.match(/(\S+)\s+(-)\s+(\S+)/);
-          let url = null, hierarchy = null, peer = null;
-          if (extraParts) {
-            [, url, hierarchy, peer] = extraParts;
-          }
+    // Create parsed log object
+    const parsedLog = {
+      logLevel,
+      timestamp,
+      host,
+      logType,
+      dash1,
+      dash2,
+      dash3,
+      elapsedTime,
+      bytes,
+      user,
+      clientIp,
+      methodStatus,
+      port,
+      method,
+      url,
+      hierarchy,
+      peer
+    };
 
-          // Create JSON object for the log entry
-          const logEntry = {
-            logLevel,
-            timestamp,
-            logType,
-            clientIp,
-            elapsedTime: parseFloat(elapsedTime) || null,
-            bytes: parseInt(bytes, 10) || 0,
-            user,
-            ip,
-            methodStatus,
-            method,
-            url,
-            hierarchy,
-            peer,
-          };
+    parsedLogs.push(parsedLog);
+    // console.log(parsedLogs);
+    
+  }
+}
 
-          parsedLogs.push(logEntry);
-        }
-      }
+
+
+
+
+
+
 
       // Clean up: Delete the uploaded file
       fs.unlinkSync(filePath);
@@ -98,7 +111,8 @@ const uploadAndPars = (req, res) => {
       // Return JSON response
       res.status(200).json({
         status: "logs parsed successfully and stored in database",
-        count: parsedLogs.length
+        count: parsedLogs.length,
+        data: parsedLogs
       });
 
        // Save as a single document in MongoDB

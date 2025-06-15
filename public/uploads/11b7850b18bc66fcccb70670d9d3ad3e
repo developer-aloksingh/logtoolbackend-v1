@@ -1,0 +1,3 @@
+<134>1 2025-12-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=alok 103.01.01 TCP-miss/200 1257 Get www.google.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-12-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=akash 103.01.01 TCP-miss/200 1257 Get www.google.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-12-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=aman 103.01.01 TCP-miss/200 1257 Get www.google.com/yt/user - DIRECT/127.0.0.1
