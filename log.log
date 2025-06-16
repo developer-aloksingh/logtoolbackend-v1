@@ -1,0 +1,17 @@
+<134>1 2025-11-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=ajay 103.01.01 TCP-miss/200 1257 Post www.alok.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-12-12T04:50:32+05:31 AG1 id=Arrayos - - - time="2025-12-12 04:50:32" timezone=IST(+0530) fw=hostname pri=6 vpn=portalname user=rakesh src=xxx.xxx.xxx.xxx sport=xxxxx dst=xxx.xxx.xxx.xxx dport=xx dstname=localhost arg=/url type=vpn msg="some message"
+
+<134>1 2025-11-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=alok 103.01.01 TCP-miss/203 1257 Get www.alok.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-12-12T04:50:32+05:31 AG1 id=Arrayos - - - time="2025-12-12 04:50:32" timezone=IST(+0530) fw=hostname pri=6 vpn=portalname user=sunil src=xxx.xxx.xxx.xxx sport=xxxxx dst=xxx.xxx.xxx.xxx dport=xx dstname=localhost arg=/url type=vpn msg="some message"
+
+<134>1 2025-11-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=aman 103.01.01 TCP-miss/405 1257 Post www.alok.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-12-12T04:50:32+05:31 AG1 id=Arrayos - - - time="2025-12-12 04:50:32" timezone=IST(+0530) fw=hostname pri=6 vpn=portalname user=vikas src=xxx.xxx.xxx.xxx sport=xxxxx dst=xxx.xxx.xxx.xxx dport=xx dstname=localhost arg=/url type=vpn msg="some message"
+
+<134>1 2025-11-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=aman 103.01.01 TCP-miss/502 1257 Post www.alok.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-12-12T04:50:32+05:31 AG1 id=Arrayos - - - time="2025-12-12 04:50:32" timezone=IST(+0530) fw=hostname pri=6 vpn=portalname user=alok src=xxx.xxx.xxx.xxx sport=xxxxx dst=xxx.xxx.xxx.xxx dport=xx dstname=localhost arg=/url type=vpn msg="some message"
+
+<134>1 2025-11-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=ajay 103.01.01 TCP-miss/500 1257 Get www.alok.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-12-12T04:50:32+05:31 AG1 id=Arrayos - - - time="2025-12-12 04:50:32" timezone=IST(+0530) fw=hostname pri=6 vpn=portalname user=aman src=xxx.xxx.xxx.xxx sport=xxxxx dst=xxx.xxx.xxx.xxx dport=xx dstname=localhost arg=/url type=vpn msg="some message"
+
+<134>1 2025-13-12T04:50:32+05:30 AG1 AN_SQUID_LOG - - - 1746065007.000 0 user=alok 103.01.01 TCP-miss/300 1257 Post www.alok.com/yt/user - DIRECT/127.0.0.1
+<134>1 2025-12-12T04:50:32+05:31 AG1 id=Arrayos - - - time="2025-12-12 04:50:32" timezone=IST(+0530) fw=hostname pri=6 vpn=portalname user=ravan src=xxx.xxx.xxx.xxx sport=xxxxx dst=xxx.xxx.xxx.xxx dport=xx dstname=localhost arg=/url type=vpn msg="some message"
