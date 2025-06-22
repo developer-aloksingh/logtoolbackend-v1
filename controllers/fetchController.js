@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const logModel = require('./../models/logModel'); // Adjust the path to your schema file
 
-// Controller to fetch all data from MongoDB
+// // Controller to fetch all data from MongoDB
 async function fetchall(req, res) {
   try {
     // Fetch all documents from the LogDocument collection
@@ -22,5 +22,7 @@ async function fetchall(req, res) {
     });
   }
 }
+
+
 
 module.exports = { fetchall };

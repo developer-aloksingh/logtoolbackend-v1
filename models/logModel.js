@@ -16,13 +16,10 @@ const logSchema = new mongoose.Schema({
   method: { type: String, },
   url: { type: String, },
   hierarchy: { type: String, },
-  peer: { type: String, }
+  peer: { type: String, },
+  other: { type: String, }
 });
 
-const mainSchema = new mongoose.Schema({
-  status: { type: String, },
-  count: { type: Number, },
-  logs: [logSchema]
-});
 
-module.exports = mongoose.model('LogDocument', mainSchema);
+
+module.exports = mongoose.model('LogDocument', logSchema);

@@ -13,7 +13,7 @@ const upload = multer({
       cb(new Error("Only .log files are allowed"), false);
     }
   },
-  limits: { fileSize: 10 * 1024 * 1024 }, // Limit to 10MB
+  limits: { fileSize: 100 * 1024 * 1024 }, // Limit to 10MB
 });
 
 // Controller to handle log file upload and parsing
@@ -160,7 +160,7 @@ for (const line of logLines) {
     };
 
     parsedLogs.push(parsedLog);
-    // console.log(parsedLogs);
+    console.log(parsedLogs.length);
     
   }
 }
@@ -182,9 +182,25 @@ for (const line of logLines) {
         data: parsedLogs
       });
 
-       // Save as a single document in MongoDB
+      //  Save as a single document in MongoDB
     const logDocument = new logModel({ logs: parsedLogs });
     await logDocument.save();
+    // console.log(parsedLogs);
+    
+    logModel.deleteMany();
+    // Delete all documents in the collection
+      try {
+        const deleteResult = await logModel.deleteMany({});
+        console.log(`${deleteResult.deletedCount} documents deleted`);
+        const result = await logModel.insertMany(parsedLogs);
+        console.log(`${result.length} documents saved`);
+
+      } catch (error) {
+        console.log('error while saving data' ,error);
+        
+      }
+
+
 
 
 
